@@ -2,8 +2,9 @@
 
 def divisible_by_2(my_list=[]):
     atarashi_list = []
-    if my_list:
-        for num in my_list:
-            atarashi.append(False if num % 2 else True)
-        return atarashi_list
-
+    for num in range(len(my_list)):
+        if my_list[num] % 2 == 0:
+            atarashi_list.append(True)
+        else:
+            atarashi_list.append(False)
+    return atarashi_list
