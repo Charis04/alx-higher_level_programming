@@ -8,4 +8,3 @@ def new_in_list(my_list, idx, element):
     atarashi_list = list(my_list)
     atarashi_list[idx] = element
     return atarashi_list
-
