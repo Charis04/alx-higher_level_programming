@@ -2,10 +2,8 @@
 
 
 def uppercase(str):
-    new_str = ""
     for char in str:
         if ord(char) >= 97 and ord(char) <= 122:
-            new_str += chr(ord(char) - 32)
+            print("{}".format(chr(ord(char) - 32)), end="")
         else:
-            new_str += char
-    print(new_str)
+            print(char, end="")
