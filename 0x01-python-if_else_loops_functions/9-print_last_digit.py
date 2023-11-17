@@ -10,3 +10,4 @@ def print_last_digit(number):
     while mod >= 10:
         mod %= 10
     print(mod, end="")
+    return mod
