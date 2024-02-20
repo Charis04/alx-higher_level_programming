@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def lookup(obj):
     """Gets all available attributes and methods of an object.
     Args:
