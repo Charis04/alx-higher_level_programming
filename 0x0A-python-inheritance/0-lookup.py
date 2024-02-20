@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""A program that gets all available atts and meths."""
+
 
 def lookup(obj):
     """Gets all available attributes and methods of an object.
