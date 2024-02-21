@@ -14,7 +14,7 @@ def main():
     try:
         cont = load_from_json_file(filename)
         ls = cont + ls
-    except:
+    except FileNotFoundError:
         pass
 
     save_to_json_file(ls, filename)
