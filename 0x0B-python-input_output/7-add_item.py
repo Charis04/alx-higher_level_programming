@@ -20,11 +20,11 @@ def main():
     save_to_json_file(ls, filename)
 
 
-def get_arg_list(l):
+def get_arg_list(args_l):
     """ gets a list of arguements passed to program"""
 
     a = []
-    for i in l[1:]:
+    for i in args_l[1:]:
         a.append(i)
     return a
 
