@@ -7,6 +7,8 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 def main():
+    """ main fuction of program"""
+
     ls = get_arg_list(sys.argv)
     filename = "add-item.json"
     cont = load_from_json_file(filename)
@@ -15,6 +17,8 @@ def main():
 
 
 def get_arg_list(l):
+    """ gets a list of arguements passed to program"""
+
     a = []
     for i in l[1:]:
         a.append(i)
