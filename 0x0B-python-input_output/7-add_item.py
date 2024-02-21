@@ -10,12 +10,13 @@ def main():
     """ main fuction of program"""
 
     ls = get_arg_list(sys.argv)
-    filename = "add-item.json"
+    filename = "add_item.json"
     try:
         cont = load_from_json_file(filename)
         ls = cont + ls
     except:
         pass
+
     save_to_json_file(ls, filename)
 
 
