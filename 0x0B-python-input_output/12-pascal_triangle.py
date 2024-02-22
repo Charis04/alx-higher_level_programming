@@ -13,9 +13,12 @@ def pascal_triangle(n):
             if col_num == 0 or col_num == row_num:
                 row.append(1)
             else:
-                value = triangle[row_num - 1][col_num - 1] + triangle[row_num - 1][col_num]
+                value = (
+                        triangle[row_num - 1][col_num - 1]
+                        +
+                        triangle[row_num - 1][col_num]
+                        )
                 row.append(value)
         triangle.append(row)
 
     return triangle
-
