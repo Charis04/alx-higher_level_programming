@@ -28,5 +28,6 @@ class Student:
     def reload_from_json(self, json):
         """replaces all attributes of the obj with with the json"""
 
-        self.__dict__.clear()
-        self.__dict__.update(json)
+        if json:
+            self.__dict__.clear()
+            self.__dict__.update(json)
