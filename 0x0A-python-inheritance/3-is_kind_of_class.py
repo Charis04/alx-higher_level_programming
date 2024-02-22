@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A function"""
+"""Program a function"""
 
 
 def is_kind_of_class(obj, a_class):
