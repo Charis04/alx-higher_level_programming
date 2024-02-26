@@ -99,6 +99,16 @@ class Rectangle(Base):
 
     def __str__(self):
         return (
-                f"[Rectangle] ({self.id}) {self._x}/{self._y} "
+                f"[{type(self).__name__}] ({self.id}) {self._x}/{self._y} "
                 f"- {self._width}/{self._height}"
                 )
+
+    def to_dictionary(self):
+        dic = {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
+        return dic
