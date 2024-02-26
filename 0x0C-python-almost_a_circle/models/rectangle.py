@@ -8,10 +8,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self._width = width
-        self._height = height
-        self._x = x
-        self._y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -19,7 +19,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
-        if width is not int:
+        if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width < 1:
             raise ValueError("width must be > 0")
@@ -32,7 +32,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        if height is not int:
+        if type(height) is not int:
             raise TypeError(f"height must be an integer")
         elif height < 1:
             raise ValueError("height must be > 0")
@@ -45,7 +45,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        if x is not int:
+        if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
             raise ValueError("x must be >= 0")
@@ -58,7 +58,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        if y is not int:
+        if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
             raise ValueError("y must be >= 0")
@@ -69,8 +69,36 @@ class Rectangle(Base):
         return (self._width * self._height)
 
     def display(self):
-        for i in range(self._height):
-            print("#" * self._width)
+        for _ in range(self._y):
+            print()
+        for _ in range(self._height):
+            print(" " * self._x + "#" * self._width)
+
+    def update(self, *args, **kwargs):
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        else:
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
+        """
+        instead of
+        arg_l = len(args)
+        if arg_l > 0:
+            self.id = args[0]
+        if arg_l > 1:
+            self.width = args[1]
+        if arg_l > 2:
+            self.height = args[2]
+        if arg_l > 3:
+            self.x = args[3]
+        if arg_l > 4:
+            self.y = args[4]
+        """
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self._x}/{self._y} - {self._width}/{self._height}"
+        return (
+                f"[Rectangle] ({self.id}) {self._x}/{self._y} "
+                f"- {self._width}/{self._height}"
+                )
