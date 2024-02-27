@@ -9,7 +9,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x=x, y=y, id=id)
 
-
     def __str__(self):
         return (
                 f"[{type(self).__name__}] ({self.id}) {self._x}/{self._y} "
@@ -38,3 +37,12 @@ class Square(Rectangle):
         else:
             for attr, value in kwargs.items():
                 setattr(self, attr, value)
+
+    def to_dictionary(self):
+        dic = {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }
+        return dic
