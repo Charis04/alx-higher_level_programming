@@ -7,6 +7,7 @@ class TestBase(unittest.TestCase):
     def test_id_exist(self):
         b1 = Base()
         self.assertTrue(b1.id)
+        self.assertEqual(b1.id, 1)
 
     def test_id_plus(self):
         b1 = Base()
