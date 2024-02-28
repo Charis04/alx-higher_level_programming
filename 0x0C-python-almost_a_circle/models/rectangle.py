@@ -15,10 +15,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """getter for width"""
         return self._width
 
     @width.setter
     def width(self, width):
+        """setter for width"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width < 1:
@@ -28,10 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """getter for height"""
         return self._height
 
     @height.setter
     def height(self, height):
+        """setter for height"""
         if type(height) is not int:
             raise TypeError(f"height must be an integer")
         elif height < 1:
@@ -41,10 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """getter for x"""
         return self._x
 
     @x.setter
     def x(self, x):
+        """setter for x"""
         if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
@@ -54,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """getter for y"""
         return self._y
 
     @y.setter
     def y(self, y):
+        """setter for y"""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
@@ -70,12 +78,14 @@ class Rectangle(Base):
         return (self._width * self._height)
 
     def display(self):
+        """displays shape as hash"""
         for _ in range(self._y):
             print()
         for _ in range(self._height):
             print(" " * self._x + "#" * self._width)
 
     def update(self, *args, **kwargs):
+        """updates the object attr"""
         if args:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for attr, value in zip(attributes, args):
@@ -83,28 +93,16 @@ class Rectangle(Base):
         else:
             for attr, value in kwargs.items():
                 setattr(self, attr, value)
-        """
-        instead of
-        arg_l = len(args)
-        if arg_l > 0:
-            self.id = args[0]
-        if arg_l > 1:
-            self.width = args[1]
-        if arg_l > 2:
-            self.height = args[2]
-        if arg_l > 3:
-            self.x = args[3]
-        if arg_l > 4:
-            self.y = args[4]
-        """
 
     def __str__(self):
+        """str overloading"""
         return (
                 f"[{type(self).__name__}] ({self.id}) {self._x}/{self._y} "
                 f"- {self._width}/{self._height}"
                 )
 
     def to_dictionary(self):
+        """a dict representation of the obj"""
         dic = {
                 'id': self.id,
                 'width': self.width,
