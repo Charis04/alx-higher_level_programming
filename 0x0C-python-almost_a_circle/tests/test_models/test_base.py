@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 
+
 class TestBase(unittest.TestCase):
     def test_id_exist(self):
         b1 = Base()
@@ -13,6 +14,10 @@ class TestBase(unittest.TestCase):
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
+
+    def test_id_save(self):
+        b = Base(89)
+        self.assertEqual(b.id, 89)
 
 
 if __name__ == "__main__":
