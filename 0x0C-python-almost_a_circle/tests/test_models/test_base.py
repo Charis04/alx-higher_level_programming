@@ -132,7 +132,7 @@ class TestBase_to_json_string(unittest.TestCase):
 
     def test_to_json_string_square_two_dicts(self):
         s1 = Square(10, 2, 3, 4)
-        s2 = Square(4, 5, 21, 2)
+   AOA     s2 = Square(4, 5, 21, 2)
         list_dicts = [s1.to_dictionary(), s2.to_dictionary()]
         self.assertTrue(len(Base.to_json_string(list_dicts)) == 78)
 
@@ -175,7 +175,7 @@ class TestBase_save_to_file(unittest.TestCase):
         Rectangle.save_to_file([r])
         with open("Rectangle.json", "r") as f:
             self.assertTrue(len(f.read()) == 53)
-
+OOA
     def test_save_to_file_two_rectangles(self):
         r1 = Rectangle(10, 7, 2, 8, 5)
         r2 = Rectangle(2, 4, 1, 2, 3)
@@ -415,7 +415,7 @@ class TestBase_save_to_file_csv(unittest.TestCase):
             os.remove("Square.csv")
         except IOError:
             pass
-        try:
+        try:AOA
             os.remove("Base.csv")
         except IOError:
             pass
@@ -468,6 +468,7 @@ class TestBase_save_to_file_csv(unittest.TestCase):
     def test_save_to_file_csv_empty_list(self):
         Square.save_to_file_csv([])
         with open("Square.csv", "r") as f:
+
             self.assertEqual("[]", f.read())
 
     def test_save_to_file_csv_no_args(self):
