@@ -2,7 +2,6 @@
 """Progam a class"""
 
 import json
-import pandas as pd
 
 
 class Base:
@@ -74,6 +73,7 @@ class Base:
 
         return obj_list
 
+    """
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Saves a list of objects to a CSV file"""
@@ -103,3 +103,4 @@ class Base:
             obj_list.append(cls.create(**dic))
 
         return obj_list
+    """
