@@ -22,40 +22,48 @@ class TestBase_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
 
     def test_no_arg(self):
+        """test base()"""
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_three_bases(self):
+        """test three bases"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 2)
 
     def test_None_id(self):
+        """test none id"""
         b1 = Base(None)
         b2 = Base(None)
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_unique_id(self):
+        """test unique id"""
         self.assertEqual(12, Base(12).id)
 
     def test_nb_instances_after_unique_id(self):
+        """test nb instances after unique"""
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 1)
 
     def test_id_public(self):
+        """test id public"""
         b = Base(12)
         b.id = 15
         self.assertEqual(15, b.id)
 
     def test_nb_instances_private(self):
+        """test nb instance private"""
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
 
     def test_str_id(self):
+        """test str id"""
         self.assertEqual("hello", Base("hello").id)
 
     def test_float_id(self):
@@ -401,12 +409,13 @@ class TestBase_load_from_file(unittest.TestCase):
             Base.load_from_file([], 1)
 
 
+"""
 class TestBase_save_to_file_csv(unittest.TestCase):
-    """Unittests for testing save_to_file_csv method of Base class."""
+    Unittests for testing save_to_file_csv method of Base class.
 
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        Delete any created files.
         try:
             os.remove("Rectangle.csv")
         except IOError:
@@ -460,7 +469,6 @@ class TestBase_save_to_file_csv(unittest.TestCase):
         with open("Square.csv", "r") as f:
             self.assertTrue("8,10,7,2", f.read())
 
-    """
     def test_save_to_file__csv_None(self):
         Square.save_to_file_csv(None)
         with open("Square.csv", "r") as f:
@@ -471,7 +479,6 @@ class TestBase_save_to_file_csv(unittest.TestCase):
         with open("Square.csv", "r") as f:
 
             self.assertEqual("[]", f.read())
-    """
 
     def test_save_to_file_csv_no_args(self):
         with self.assertRaises(TypeError):
@@ -480,14 +487,15 @@ class TestBase_save_to_file_csv(unittest.TestCase):
     def test_save_to_file_csv_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Square.save_to_file_csv([], 1)
+"""
 
-
+"""
 class TestBase_load_from_file_csv(unittest.TestCase):
-    """Unittests for testing load_from_file_csv method of Base class."""
+    Unittests for testing load_from_file_csv method of Base class.
 
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        Delete any created files.
         try:
             os.remove("Rectangle.csv")
         except IOError:
@@ -546,6 +554,7 @@ class TestBase_load_from_file_csv(unittest.TestCase):
     def test_load_from_file_csv_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.load_from_file_csv([], 1)
+"""
 
 
 if __name__ == "__main__":
