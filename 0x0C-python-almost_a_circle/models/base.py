@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Progam a class"""
+
 import json
 import pandas as pd
 
@@ -83,7 +84,7 @@ class Base:
             for obj in list_objs:
                 dic = obj.to_dictionary()
                 content.append(dic)
-            content = pd.DataFrame(content)
+        content = pd.DataFrame(content)
         content.to_csv(f_name, index=False)
 
     @classmethod
