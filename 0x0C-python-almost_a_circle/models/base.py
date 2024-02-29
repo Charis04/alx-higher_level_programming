@@ -33,6 +33,7 @@ class Base:
         f_name = f"{cls.__name__}.json"
         content = "[]"
         if list_objs is not None:
+            content = []
             for obj in list_objs:
                 dic = obj.to_dictionary()
                 content.append(dic)
