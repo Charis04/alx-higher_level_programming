@@ -36,9 +36,10 @@ class Base:
             for obj in list_objs:
                 dic = obj.to_dictionary()
                 content.append(dic)
+            content = cls.to_json_string(content)
 
         with open(f_name, 'w', encoding='utf-8') as f:
-            json.dump(content, f, default=cls.to_json_string)
+            f.write(content)
 
     @staticmethod
     def from_json_string(json_string):
