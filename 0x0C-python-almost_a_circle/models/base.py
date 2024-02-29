@@ -76,7 +76,7 @@ class Base:
     """
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Saves a list of objects to a CSV file"""
+        Saves a list of objects to a CSV file
 
         f_name = f"{cls.__name__}.csv"
         content = []
@@ -89,7 +89,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Loads a list of objects from a CSV file"""
+        Loads a list of objects from a CSV file
 
         f_name = f"{cls.__name__}.csv"
         try:
