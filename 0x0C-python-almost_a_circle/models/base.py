@@ -31,7 +31,7 @@ class Base:
         """Saves a list of objects to a file as json string"""
 
         f_name = f"{cls.__name__}.json"
-        content = []
+        content = "[]"
         if list_objs is not None:
             for obj in list_objs:
                 dic = obj.to_dictionary()
