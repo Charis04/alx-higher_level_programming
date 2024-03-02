@@ -2,6 +2,7 @@
 """Progam a class"""
 
 import json
+import csv
 
 
 class Base:
@@ -78,10 +79,9 @@ class Base:
 
         return obj_list
 
-    """
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        Saves a list of objects to a CSV file
+        """Saves a list of objects to a CSV file"""
 
         f_name = f"{cls.__name__}.csv"
         content = []
@@ -89,17 +89,23 @@ class Base:
             for obj in list_objs:
                 dic = obj.to_dictionary()
                 content.append(dic)
-            content = pd.DataFrame(content)
-        content.to_csv(f_name, index=False)
+        with open(f_name, 'w', encoding='utf-8', newline='') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=content[0].keys())
+            writer.writeheader()
+            writer.writerows(content)
 
     @classmethod
     def load_from_file_csv(cls):
-        Loads a list of objects from a CSV file
+        """Loads a list of objects from a CSV file"""
 
         f_name = f"{cls.__name__}.csv"
         try:
-            df = pd.read_csv(f_name)
-            l_dic = df.to_dict(orient='records')
+            l_dic = []
+            with open(f_name, 'r', encoding='utf-8', newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    row = {key: int(value) for key, value in row.items()}
+                    l_dic.append(row)
         except FileNotFoundError:
             return []
 
@@ -108,4 +114,3 @@ class Base:
             obj_list.append(cls.create(**dic))
 
         return obj_list
-    """
