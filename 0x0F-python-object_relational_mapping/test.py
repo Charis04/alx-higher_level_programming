@@ -1,16 +1,6 @@
-dict = {
-    "shirt": "shirt",
-    "trousers": "trousers",
-    "tie": "tie",
-    "shoe": "shoe"
-}
+#!/usr/bin/python3
 
-key = "underwear"
-if key in dict.keys():
-    print(f"modifying {key}")
-    dict["underware"] = "singlet"
-else:
-    print(f"creating {key}")
-    dict["underware"] = "singlet"
+string = "My name is Charis"\
+" I am Nigerian"
 
-print(dict)
+print(string)
