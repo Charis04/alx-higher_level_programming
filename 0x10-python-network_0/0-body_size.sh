@@ -1,3 +1,3 @@
 #!/bin/bash
 # Get size of content
-echo "$(curl -s "$1" -o /dev/null | wc -c)"
+curl -sI "$1" | grep "Content-Length:" | cut -d' ' -f2
