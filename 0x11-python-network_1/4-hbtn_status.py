@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-import requests
+"""
+Program that sends request using requests lib
+"""
 
-url = "https://alx-intranet.hbtn.io/status"
+if __name__ == "__main__":
+    import requests
 
-res = requests.get(url)
+    url = "https://alx-intranet.hbtn.io/status"
 
-print("Body response:")
-print("\t- type:", type(res))
-print("\t- content:", res.content)
-print("\t- utf8 content:", res.text)
+    res = requests.get(url)
+
+    print("Body response:")
+    print("\t- type:", type(res))
+    print("\t- content:", res.content)
+    print("\t- utf8 content:", res.text)
