@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-import urllib.request
-import sys
+"""
+A program that gets a header from a url using urllib
+"""
 
-url = sys.argv[1]
+if __name__ == "__main__":
+    import urllib.request
+    import sys
 
-with urllib.request.urlopen(url) as response:
-    header = response.getheader("X-Request-Id")
-    print(header)
+    url = sys.argv[1]
+
+    with urllib.request.urlopen(url) as response:
+        header = response.getheader("X-Request-Id")
+        print(header)
