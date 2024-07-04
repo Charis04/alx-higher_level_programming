@@ -13,7 +13,7 @@ def main():
         host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3]
         )
     cur = db.cursor()
-    qry = "SELECT * FROM states WHERE BINARY name = '{}'".format(sys.argv[4])
+    qry = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY states.id ASC".format(sys.argv[4])
     cur.execute(qry)
     rows = cur.fetchall()
     for row in rows:
