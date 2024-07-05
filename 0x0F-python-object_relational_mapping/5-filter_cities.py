@@ -17,5 +17,5 @@ if __name__ == "__main__":
     cur.execute(qry, (sys.argv[4],))
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+    cities = [row[0] for row in rows]
+    print(", ".join(cities))
