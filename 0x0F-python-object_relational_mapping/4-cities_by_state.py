@@ -12,7 +12,8 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    qry = "SELECT * FROM cities ORDER BY cities.id ASC"
+    qry = "SELECT c.id, c.name, s.name FROM cities c INNER JOIN"\
+        " states s ON c.state_id = s.id; ORDER BY cities.id ASC"
     cur.execute(qry)
     rows = cur.fetchall()
 
