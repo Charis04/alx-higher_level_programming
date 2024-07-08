@@ -19,11 +19,7 @@ Base = declarative_base()
 class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, Sequence('states_id_seq'), primary_key=True)
-    name = Column(String(128))
+    name = Column(String(128), nullable=False)
 
     def __repr__(self):
         return "<State(name='%s')>" % (self.name)
-
-
-print("Start print")
-print(State.__table__)
