@@ -17,6 +17,9 @@ Base = declarative_base()
 
 
 class State(Base):
+    """
+    Class that represents states table in database
+    """
     __tablename__ = 'states'
     id = Column(Integer, Sequence('states_id_seq'), primary_key=True)
     name = Column(String(128), nullable=False)
