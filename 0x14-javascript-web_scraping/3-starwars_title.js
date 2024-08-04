@@ -10,6 +10,6 @@ request(url, (error, response, body) => {
   } else if (response.statusCode !== 200) {
     console.error(`Failed to fetch data. Status code: ${response.statusCode}`);
   } else {
-    console.log(JSON.parse(body)['title']);
+    console.log(JSON.parse(body).title);
   }
 });
