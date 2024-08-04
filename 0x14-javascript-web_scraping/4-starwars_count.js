@@ -18,6 +18,6 @@ request(url, (error, response, body) => {
         charCount++;
       }
     }
-    console.log(char_count);
+    console.log(charCount);
   }
 });
