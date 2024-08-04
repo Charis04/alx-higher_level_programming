@@ -3,7 +3,7 @@
 const request = require('request');
 
 const url = process.argv[2];
-const character = 'https://swapi-api.alx-tools.com/api/people/18/'
+const character = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, (error, response, body) => {
   if (error) {
@@ -13,7 +13,7 @@ request(url, (error, response, body) => {
   } else {
     films = JSON.parse(body).results;
     let char_count = 0;
-    for (film in films) {
+    for (film of films) {
       if (film.characters.includes(character)) {
         char_count++;
       }
