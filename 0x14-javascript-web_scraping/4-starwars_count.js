@@ -11,11 +11,11 @@ request(url, (error, response, body) => {
   } else if (response.statusCode !== 200) {
     console.error(`Failed to fetch data. Status code: ${response.statusCode}`);
   } else {
-    films = JSON.parse(body).results;
-    let char_count = 0;
-    for (film of films) {
+    const films = JSON.parse(body).results;
+    let charCount = 0;
+    for (const film of films) {
       if (film.characters.includes(character)) {
-        char_count++;
+        charCount++;
       }
     }
     console.log(char_count);
